@@ -1,0 +1,72 @@
+<div class="container">
+<app-header></app-header>
+<br>
+<div class="container">
+    <div class="row">
+        <div class="col-md-9">
+          <mat-card style="margin-left: -15px">
+  <h4>Top Rated Doctors</h4>
+  <hr>
+  <div class="example-header">
+      <mat-form-field>
+        <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+      </mat-form-field>
+    </div>
+    
+    <div class="example-container mat-elevation-z8">
+    
+      <mat-table [dataSource]="dataSource" matSort>
+    
+        <!-- ID Column -->
+        <ng-container matColumnDef="id">
+          <mat-header-cell *matHeaderCellDef mat-sort-header> ID </mat-header-cell>
+          <mat-cell *matCellDef="let row"> {{row.id}} </mat-cell>
+        </ng-container>
+    
+        <!-- Doctor Name Column -->
+        <ng-container matColumnDef="name">
+          <mat-header-cell *matHeaderCellDef mat-sort-header> Doctor Name </mat-header-cell>
+          <mat-cell *matCellDef="let row"> {{row.name}} </mat-cell>
+        </ng-container>
+    
+        <!-- Phone Number -->
+        <ng-container matColumnDef="phone">
+          <mat-header-cell *matHeaderCellDef mat-sort-header> Phone Number </mat-header-cell>
+          <mat-cell *matCellDef="let row"> {{row.phone}} </mat-cell>
+        </ng-container>
+    
+        <!-- Rating Column -->
+        <ng-container matColumnDef="rating">
+          <mat-header-cell *matHeaderCellDef mat-sort-header> Rating </mat-header-cell>
+          <mat-cell *matCellDef="let row"> {{row.rating}} </mat-cell>
+        </ng-container>
+    
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns;"
+        [ngClass]="{'highlight': selectedRowIndex == row.id}"
+        (click)="selectedRow(row)">
+        </mat-row>
+      </mat-table>
+    
+      <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+    </div>
+          </mat-card>
+          <br>
+          <mat-card style="margin-left: -15px" *ngIf="isSubscripe">
+              <div class="row">
+                  <div class="col-md-12">
+                    <h4>Suscriped Diseases</h4>
+                    </div>
+                    </div>
+              <app-subscription *ngFor="let subscripe of subscripeDate.patients;" [subscripe]='subscripe'></app-subscription>
+          </mat-card>
+</div>
+<div class="col-md-3" *ngIf="isRegistered">
+  <app-registration [data]='outputData' (isEnable)='onEnable($event)'></app-registration>
+</div>
+
+    </div>
+</div>
+<br>
+
+</div>

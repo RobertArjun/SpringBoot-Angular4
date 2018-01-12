@@ -1,0 +1,63 @@
+<mat-card>
+  <div class="container">
+<h4>Subscribe</h4>
+<hr>
+    <div class="row">
+        <div class="col-sm-12">
+          Name
+          </div>
+          <div class="col-sm-12">
+            <input type="text" class="form-control" [(ngModel)]="patient.pname" name="pname">
+          </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                  Age
+                  </div>
+                  <div class="col-sm-12">
+                    <input type="text" class="form-control" [(ngModel)]="patient.age" name="age">
+                  </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12">
+                          Diseases
+                          </div>
+                          <div class="col-sm-12">
+                            <select  class="form-control"  [(ngModel)]="patient.diseas" name="diseas">
+                              <option value="0">Select</option>
+                              <option value="fever">Fever</option>
+                            </select>
+                          </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-12">
+                                  Phone Number
+                                  </div>
+                                  <div class="col-sm-12">
+                                    <input type="text" class="form-control" [(ngModel)]="patient.phoneNumber" name="phoneNumber">
+                                  </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                          Address
+                                          </div>
+                                          <div class="col-sm-12">
+                                            <input type="text" class="form-control" [(ngModel)]="patient.address" name="address">
+                                          </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-sm-12">
+                                                 Doctor Name
+                                                  </div>
+                                                  <div class="col-sm-12">
+                                                    <input type="text" class="form-control"  readonly [value]="data.name">
+                                                  </div>
+                                                    </div>
+                                                    <br>
+                                                    <div class="row">
+                                                        <div class="col-sm-12">
+                                                          <button class="btn btn-primary" (click)="save()">Submit</button>
+                                                          </div>
+                                                    </div>      
+          </div>
+</mat-card>
