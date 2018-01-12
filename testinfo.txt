@@ -1,0 +1,9 @@
+Angular 4
+Spring Boot
+Hibernate
+JPA
+MySQL 
+
+
+Building the platform between Hospital,Doctors,Patients and Insurance company's,
+Resolving  the commonly and frequently occurred multiple problems and diseases across the world, we can resolve using "Health Community"
